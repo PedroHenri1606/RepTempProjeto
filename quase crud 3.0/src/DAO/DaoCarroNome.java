@@ -74,7 +74,7 @@ public class DaoCarroNome {
 
     public CarroNome retornarNome(long id) {
 
-        String sql = "SELECT nome_carro from carro where id_carro = " + id;
+        String sql = "SELECT nome from carronome where id_nomeCarro = " + id;
 
         List<CarroNome> modelos = new ArrayList<>();
         CarroNome carroNome = new CarroNome();
@@ -83,7 +83,7 @@ public class DaoCarroNome {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                carroNome.setNome(resultSet.getString("nome_carro"));
+                carroNome.setNome(resultSet.getString("nome"));
             }
             statement.execute();
             statement.close();

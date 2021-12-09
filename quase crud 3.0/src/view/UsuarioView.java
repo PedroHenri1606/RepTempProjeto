@@ -57,9 +57,10 @@ public class UsuarioView {
         usuarioModel.setSexo(this.escolherSexo());
         usuarioModel.setEscolha(this.escolha());
 
-        if (escolha() == 1) {
+        if (usuarioModel.getEscolha() == 1) {
             usuarioModel.setCarro(carroView.cadastrarCarro());
             usuarioController.realizarCadastro(usuarioModel);
+            usuarioController.determinarUsuario(usuarioModel.getEmail(),usuarioModel.getSenha());
         } else {
             usuarioController.realizarCadastro(usuarioModel);
         }
